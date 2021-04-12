@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.showAd {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 100px;
+}
+
+#myBtn {
+	width: 100px;
+	height: 60px;
+}
+
+.ad {
+	width: 500px;
+	height: 200px;
+	max-width: 50%;
+	max-height: 40vh;
+	background-color: purple;
+	margin: 1%;
+	margin-bottom: 0;
+	border: 3px solid black;
+	border-bottom: none;
+}
+
+.adBtns {
+	background-color: #f4f4f2;
+	height: 25px;
+}
+
+.btn {
+	max-width: 25px;
+	max-height: 25px;
+	float: right;
+	padding-right: 1px;
+	padding-left: 1px; 
+}
+
+.ad #closeBtn:hover {
+	background-color: red;
+}
+
+.arrow {
+	width: 500px;
+	height: 40px;
+	max-width: 50%;
+	max-height: 40vh;
+	background-color: purple;
+	margin: 1%;
+	margin-top: 0;
+	border: 3px solid black;
+}
+
+.arrows {
+	float: right;
+	width: 45px;
+	height: 35px;
+}

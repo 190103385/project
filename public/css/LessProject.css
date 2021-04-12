@@ -1,0 +1,50 @@
+.product {
+  display: flex;
+}
+.headDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headDiv img {
+  display: flex;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menuBar {
+  display: flex;
+}
+.backImgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headDiv #img1 {
+  width: 20px;
+  height: 20px;
+}
+.headDiv #img2 {
+  width: 30px;
+  height: 40px;
+}
+.headDiv #img3 {
+  width: 50px;
+  height: 60px;
+}
+.headDiv #img4 {
+  width: 70px;
+  height: 80px;
+}

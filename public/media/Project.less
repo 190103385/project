@@ -1,0 +1,17 @@
+@widths: 10px, 30px, 50px, 70px;
+@heights: 20px, 40px, 60px, 80px;
+
+.imgLoop(@widths; @heights; @index:1) when (@index <= length(@widths)) {
+
+	@mywidth : extract(@widths, @index);
+	@myheight : extract(@heights, @index);
+
+	.headDiv #img@{index}{
+		width: @mywidth;
+		height: @myheight;
+	}
+
+	.imgLoop(@widths; @heights; (@index + 1));
+}
+
+.imgLoop(@widths; @heights);

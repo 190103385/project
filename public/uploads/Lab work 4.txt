@@ -1,0 +1,94 @@
+--1-st task
+DECLARE
+    v_average_salary INT;
+BEGIN
+    SELECT AVG(salary) into v_average_salary
+    FROM employees
+    WHERE department_id = 
+    (SELECT department_id
+    FROM departments
+    WHERE department_name = 'IT');
+    
+    IF v_average_salary > 5000 THEN DBMS_OUTPUT.PUT_LINE('Average salary is ' || v_average_salary || '. Which is more than 5000');
+    ELSE DBMS_OUTPUT.PUT_LINE('Average salary is ' || v_average_salary || '. Which is less than 5000');
+    END IF;
+    
+    SELECT AVG(salary) into v_average_salary
+      FROM employees
+      WHERE department_id = 
+      (SELECT department_id
+        FROM departments
+        WHERE department_name = 'Shipping');
+    IF v_average_salary > 5000 THEN DBMS_OUTPUT.PUT_LINE('Average salary is ' || v_average_salary || '. Which is more than 5000');
+    ELSE DBMS_OUTPUT.PUT_LINE('Average salary is ' || v_average_salary || '. Which is less than 5000');
+    END IF;
+END;
+
+
+--2-nd task
+DECLARE
+    v_num_of_countries INT;
+    v_text VARCHAR(50);
+BEGIN
+    SELECT COUNT(country_id) INTO v_num_of_countries
+    FROM countries
+    WHERE region_id = 
+    (SELECT region_id
+    FROM regions
+    WHERE region_name = 'Europe');
+    
+    CASE
+        WHEN v_num_of_countries > 10 THEN v_text := 'More than 10 countries';
+        WHEN v_num_of_countries > 5 THEN v_text := 'More than 5 countries';
+        ELSE v_text := 'Less than or equal to 5 countries';
+    END CASE;
+    DBMS_OUTPUT.PUT_LINE(v_text);
+END;
+
+
+--3-rd task
+DECLARE
+    v_department_id INT;
+    v_department_name VARCHAR(25);
+    v_counter INT := 10;
+BEGIN
+    LOOP
+        SELECT department_id, department_name into v_department_id, v_department_name
+        FROM departments
+        WHERE department_id = v_counter;
+        dbms_output.put_line(v_department_id || ' ' || v_department_name);
+        v_counter := v_counter + 10;
+        IF v_counter > 50 THEN EXIT;
+        END IF;
+    END LOOP;
+END;
+
+--4-th task
+DECLARE
+    v_employee_id INT;
+    v_last_name VARCHAR(25);
+BEGIN
+    FOR i IN 100..115 LOOP
+        SELECT employee_id, last_name INTO v_employee_id, v_last_name
+        FROM employees
+        WHERE employee_id = i;
+        DBMS_OUTPUT.put_line(v_employee_id || ' ' || v_last_name);
+    END LOOP;
+END;
+
+
+--5-th task
+BEGIN
+    UPDATE copy_emp
+        SET salary = salary * 1.1
+        WHERE department_id = 
+        (SELECT department_id
+        FROM departments
+        WHERE location_id = 1400);
+END;
+
+--6-th task
+BEGIN
+    DELETE FROM copy_emp
+    WHERE (EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM hire_date) > 18);
+END;

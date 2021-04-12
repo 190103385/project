@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lab work 8</title>
+	<link rel="stylesheet" type="text/css" href="Lab work 8.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="ad">
+		<div class="adBtns">
+			<img id="closeBtn" class="btn" src="closeBtn.png">
+		</div>
+		<div class="adContent">
+		</div>
+	</div>
+	<div class="arrow">
+		<img id="arrowDown" class="arrows" src="arrowDown.png">
+		<img id="arrowUp" class="arrows" src="arrowUp.png">
+	</div>
+
+	<script type="text/javascript">
+		$("#arrowDown").hide();
+
+		$("#arrowUp").click(function() {
+ 			$("#arrowUp").hide();
+ 			$(".ad").slideUp();
+ 			$("#arrowDown").show();
+		});
+
+		$("#arrowDown").click(function() {
+ 			$("#arrowDown").hide();
+ 			$(".ad").slideDown();
+ 			$("#arrowUp").show();
+		});
+
+		$("#closeBtn").click(function() {
+			$(".ad, .arrow").fadeOut();
+		});
+
+		$("#myBtn").click(function() {
+			$(".ad, .arrow").fadeIn();
+			$(".ad, .arrow").fadeTo("fast",1);
+			$("#arrowUp").show();
+ 			$("#arrowDown").hide();
+		});
+	</script>
+</body>
+</html>

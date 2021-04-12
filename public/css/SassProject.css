@@ -1,0 +1,72 @@
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.company {
+  align-items: center;
+}
+
+.mapContainer {
+  display: flex;
+}
+
+.myBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.socialsFoot {
+  display: flex;
+  align-items: center;
+}
+
+.headDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headDiv img {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menuBar {
+  display: flex;
+}
+
+.backImgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#firstProduct {
+  display: flex;
+  justify-content: center;
+}
+
+#secondProduct {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=SassProject.css.map */
