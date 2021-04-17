@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('project');
+    return view('Project');
 });
 
 Route::get('/project/{lang?}', function($lang='en')
