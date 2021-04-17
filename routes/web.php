@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('Project');
 });
 
-Route::get('/project/{lang?}', function($lang='en')
+Route::get('/{lang?}', function($lang='en')
  {
  	App::setlocale($lang);
     return View::make('project');

@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<title> Project </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/Project.css?v=').time()}}">
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/LessProject.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/SassProject.css">
+	<link rel="stylesheet" type="text/css" href="<?= asset('css/Project.css?v=').time() ?>">
+	<link rel="stylesheet" type="text/css" href="<?= asset('css/LessProject.css?v=').time() ?>">
+	<link rel="stylesheet" type="text/css" href="<?= asset('css/SassProject.css?v=').time() ?>">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
