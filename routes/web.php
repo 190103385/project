@@ -14,15 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('project');
 });
 
-Route::get('/project', function()
+Route::get('/project/{lang?}', function($lang='en')
  {
-     return View::make('project');
+ 	App::setlocale($lang);
+    return View::make('project');
  });
 
-Route::get('/project', 'App\Http\Controllers\UploadFileController@uploadForm');
+// Route::get('/project/{lang}', 'App\Http\Controllers\LangController@index');
+
+// Route::get('/project', 'App\Http\Controllers\UploadFileController@uploadForm');
 
 Route::post('/project', 'App\Http\Controllers\UploadFileController@uploadSubmit');
 

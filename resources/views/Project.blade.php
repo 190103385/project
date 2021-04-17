@@ -12,26 +12,26 @@
 <body>
 	<div>
 		<div class="headDiv" id="top">
-			<img src="media/appleLogo.png" id="img1">
-			<img src="media/appleLogo.png" id="img2">
-			<img src="media/appleLogo.png" id="img3">
-			<img src="media/appleLogo.png" id="img4">
-			<h1> Компания APPLE </h1>
+			<img src="<?= asset('/media/appleLogo.png') ?>" id="img1">
+			<img src="<?= asset('/media/appleLogo.png') ?>" id="img2">
+			<img src="<?= asset('/media/appleLogo.png') ?>" id="img3">
+			<img src="<?= asset('/media/appleLogo.png') ?>" id="img4">
+			<h1> APPLE </h1>
 		</div>
 		<div class="container">
 			<nav id="menuBar">
-				<a href="#top"> Домой </a>
-				<a href="#features"> Особенности </a>
-				<a href="#allProducts"> Продукты </a>
-				<a href="#company"> Компания </a>
-				<a href="#contact"> Контакты </a>
+				<a href="#top"> {{ __("Home") }} </a>
+				<a href="#features"> {{ __("Features") }} </a>
+				<a href="#allProducts"> {{ __("Products") }} </a>
+				<a href="#company"> {{ __("Company") }} </a>
+				<a href="#contact"> {{ __("Contacts") }} </a>
 			</nav>
 		</div>
 	</div>
 
 	<div class="backImgDiv">
-		<h1> Технологическая компания "Apple Inc." </h1>
-		<h3>  American multinational technology company headquartered in Cupertino, California, that designs, develops and sells consumer electronics, computer software, and online services. </h3>
+		<h1> {{ __("Technological company \"Apple Inc.\"") }} </h1>
+		<h3>  {{ __("American multinational technology company headquartered in Cupertino, California, that designs, develops and sells consumer electronics, computer software, and online services.") }} </h3>
 	</div>
 	<!-- <br><br>
 	<div class="media">
@@ -56,6 +56,7 @@
 		</div>
 	</div> -->
 
+	<h1 style="display:flex; justify-content:center; font-family: 'Times New Roman, sans-serif'; padding-top: 130px;">Features</h1>
 	<div id="features">
 		<div class="firstDescription">
 			<!-- <div id="heading1">
@@ -65,6 +66,7 @@
 			<div id="footing1">
 				<p>The App Store is a digital distribution platform, developed and maintained by Apple Inc., for mobile apps on its iOS & iPadOS operating systems. The store allows users to browse and download apps developed with Apple's iOS software development kit.<br><br>Apps can be downloaded on the iPhone smartphone, the iPod Touch handheld computer, or the iPad tablet computer, and some can be transferred to the Apple Watch smartwatch or 4th-generation or newer Apple TVs as extensions of iPhone apps.</p>
 			</div> -->
+			<h2>{{ __("Apple's net income (in billion U.S. dollars)")}}</h2>
 			<canvas id="barChart"></canvas>
 			<script type="text/javascript">
 				var ctx = document.getElementById("barChart");
@@ -73,7 +75,7 @@
 					data: {
 						labels: ["2005", "2008", "2011", "2012", "2015", "2018", "2020"],
 						datasets: [{
-							label: "Apple's net income (in billion U.S. dollars)",
+							label: "Apple",
 							data: [1.33, 6.12, 25.92, 41.73, 53.39, 59.53, 57.41],
 							backgroundColor: [
 							'rgba(255, 129, 102, 1)', 
@@ -106,6 +108,7 @@
 			<div id="footing2">
 				<p>iOS is a mobile operating system created and developed by Apple Inc. exclusively for its hardware. It is the operating system that powers many of the company's mobile devices, including the iPhone and iPod Touch; <br><br>It is the world's second-most widely installed mobile operating system, after Android. It is the basis for three other operating systems made by Apple: iPadOS, tvOS, and watchOS. It is proprietary software, although some parts of it are open source under the Apple Public Source License and other licenses.</p>
 			</div> -->
+			<h2>{{ __("Phone users (in million)")}}</h2>
 			<canvas id="pieChart" width="400" height="200">
 				<script type="text/javascript">
 				var ctx = document.getElementById("pieChart");
@@ -128,76 +131,42 @@
 			</script>
 			</canvas>
 		</div>
-
-		<!-- <div class="thirdDescription">
-			<canvas id="lineChart">
-				<script type="text/javascript">
-				var ctx = document.getElementById("lineChart");
-				var myChart = new Chart(ctx, {
-					type: 'line',
-					data: {
-						labels: ["2010", "2013", "2015", "2018", "2019", "2020", "2021"],
-						datasets: [{
-							label: "Stock price (in billion U.S. dollars)",
-							data: [7.46, 19.2, 27.88, 43.28, 37.88, 73.93, 134.49],
-							backgroundColor: [
-							'rgba(255, 129, 102, 1)', 
-							'rgba(234, 162, 235, 1)', 
-							'rgba(255, 206, 36, 1)', 
-							'rgba(75, 192, 192, 1)', 
-							'rgba(153, 102, 255, 1)', 
-							'rgba(225, 135, 107, 1)', 
-							'rgba(147, 119, 15, 1)'],
-						}]
-					},
-					options: {
-						scales: {
-							yAxes: [{
-								ticks: {
-									beginAtZero: true
-								}
-							}]
-						}
-					}
-				});
-			</script>
-			</canvas>
-		</div> -->
 	</div>
 
+	<h1 style="display:flex; justify-content:center; font-family: 'Times New Roman, sans-serif'; padding-top: 150px;">Products</h1>
 	<div id="allProducts">
 		<div class="myProducts">
 			<div id="firstProduct" class="products">
 	            <div class="product">
-	              <img src="media/iphone.jpg" alt="Image" width="180px" height="180px" />
+	              <img src="<?= asset('/media/iphone.jpg') ?>" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
-	              <h3>IPHONE 12 PRO FEATURES</h3>
+	              <h3>{{ __("IPHONE 12 PRO")}}</h3>
 	              <p>
 	              	<ul>
 	              		<li>
-	              			New design
+	              			{{ __("New design")}}
 	              		</li>
 
 	              		<li>
-	              			6.1- and 6.7-inch sizes
+	              			{{ __("6.1- and 6.7-inch sizes")}}
 	              		</li>
 
 	              		<li>
-	              			5G Support
+	              			{{ __("5G Support")}}
 	              		</li>
 
 	              		<li>
-	              			Major camera improvements
+	              			{{ __("Major camera improvements")}}
 	              		</li>
 
 	              		<li>
-	              			LiDAR
+	              			{{ __("LiDAR")}}
 	              		</li>
 
 	              		<li>
-	              			Ceramic Shield display
+	              			{{ __("Ceramic Shield display")}}
 	              		</li>
 	              	</ul>
 	              </p>
@@ -206,35 +175,35 @@
 
 	        <div id="secondProduct" class="products">
 	            <div class="product">
-	              <img src="media/appleWatch.jpg" alt="Image" width="180px" height="180px" />
+	              <img src="<?= asset('/media/appleWatch.jpg') ?>" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
-	              <h3>APPLE WATCH SERIES 6 FEATURES</h3>
+	              <h3>{{ __("APPLE WATCH SERIES 6")}}</h3>
 	              <p>
 	              	<ul>
 	              		<li>
-	              			Two sizes: 40mm and 44mm
+	              			{{ __("Two sizes: 40mm and 44mm")}}
 	              		</li>
 
 	              		<li>
-	              			Faster S6 chip
+	              			{{ __("Faster S6 chip")}}
 	              		</li>
 
 	              		<li>
-	              			New low-cost SE option
+	              			{{ __("New low-cost SE option")}}
 	              		</li>
 
 	              		<li>
-	              			Blood oxygen monitoring
+	              			{{ __("Blood oxygen monitoring")}}
 	              		</li>
 
 	              		<li>
-	              			New colors
+	              			{{ __("New colors")}}
 	              		</li>
 
 	              		<li>
-	              			LTE and non-LTE options
+	              			{{ __("LTE and non-LTE options")}}
 	              		</li>
 	              	</ul>
 	              </p>
@@ -245,35 +214,35 @@
 		<div class="myProducts">
 			<div id="firstProduct" class="products">
 	            <div class="product">
-	              <img src="media/ipad.jpg" alt="Image" width="180px" height="180px" />
+	              <img src="<?= asset('/media/ipad.jpg') ?>" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
-	              <h3>IPAD AIR 10.9" FEATURES</h3>
+	              <h3>{{ __("IPAD AIR 10.9\"")}}</h3>
 	              <p>
 	              	<ul>
 	              		<li>
-	              			10.9-inch Liquid Retina display
+	              			{{ __("10.9-inch Liquid Retina display")}}
 	              		</li>
 
 	              		<li>
-							True Tone & Wide color
+							{{ __("True Tone & Wide color")}}
 	              		</li>
 
 	              		<li>
-	              			A14 Bionic processor
+	              			{{ __("A14 Bionic processor")}}
 	              		</li>
 
 	              		<li>
-	              			12-megapixel rear camera
+	              			{{ __("12-megapixel rear camera")}}
 	              		</li>
 
 	              		<li>
-	              			7-megapixel front camera
+	              			{{ __("7-megapixel front camera")}}
 	              		</li>
 
 	              		<li>
-	              			Touch ID in the power button
+	              			{{ __("Touch ID in the power button")}}
 	              		</li>
 	              	</ul>
 	              </p>
@@ -282,23 +251,23 @@
 
 	        <div id="secondProduct" class="products">
 	            <div class="product">
-	              <img src="media/macbook.jpg" alt="Image" width="180px" height="180px" />
+	              <img src="<?= asset('/media/macbook.jpg') ?>" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
-	              <h3>MACBOOK PRO 13" FEATURES</h3>
+	              <h3>{{ __("MACBOOK PRO 13\"")}}</h3>
 	              <p>
 	              	<ul>
 	              		<li>
-	              			True Tone display and Touch Bar
+	              			{{ __("True Tone display and Touch Bar")}}
 	              		</li>
 
 	              		<li>
-	              			Up to 8 TB SSD on 16", up to 4 TB on 13"
+	              			{{ __("Up to 8 TB SSD on 16\", up to 4 TB on 13\"")}}
 	              		</li>
 
 	              		<li>
-	              			T2 chip for enhanced security and "Hey Siri" support
+	              			{{ __("T2 chip for enhanced security and \"Hey Siri\" support")}}
 	              		</li>
 	              	</ul>
 	              </p>
@@ -310,11 +279,11 @@
 	<div id="company">
 		<div class="company">
 			<div class="textCompany">
-				<img src="media/companytext.jpg" alt="Image">
+				<img src="<?= asset('/media/companytext.jpg') ?>" alt="Image">
 				<div class="text">
-					<h1>Our company</h1>
-					<p>Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976 to develop and sell Wozniak's Apple I personal computer, though Wayne sold his share back within 12 days. It was incorporated as Apple Computer, Inc., in January 1977, and sales of its computers, including the Apple II, grew quickly. Within a few years, Jobs and Wozniak had hired a staff of computer designers and had a production line.</p>
-					<a href="https://en.wikipedia.org/wiki/History_of_Apple_Inc." class="btn">Read more</a>
+					<h1>{{ __("Our company")}}</h1>
+					<p>{{ __("Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976 to develop and sell Wozniak's Apple I personal computer, though Wayne sold his share back within 12 days. It was incorporated as Apple Computer, Inc., in January 1977, and sales of its computers, including the Apple II, grew quickly. Within a few years, Jobs and Wozniak had hired a staff of computer designers and had a production line.")}}</p>
+					<a href="https://en.wikipedia.org/wiki/History_of_Apple_Inc." class="btn">{{ __("Read more")}}</a>
 				</div>
 			</div>
 			<div class="mapContainer">
@@ -332,7 +301,7 @@
 					  <div class="container1">
 					    <hr>
 					
-					    <input type="text" placeholder="Product name" name="name" class="form-control">
+					    <input type="text" placeholder="Your name" name="name" class="form-control">
 					
 					     <!-- <label for="surname"><b>Surname</b></label>
 					    <input type="text" placeholder="Enter Surname" name="surname" id="surname" required>
@@ -349,7 +318,7 @@
 
 						<br>
 
-						<a href="http://localhost/project/public/mail/send"> Send message</a>
+						<a href="http://localhost/project/public/mail/send"> {{ __("Send message")}}</a>
 					
 					    <!-- <button type="submit" class="registerbtn">Send</button> -->
 					  </div>
@@ -365,28 +334,28 @@
 			</div>
 
 			<div class="adress">
-				<embed type="image/jpg" src="media/company.jpg" width="90%" height="70%"> </embed>
-					<p>Apple Park is the corporate headquarters of Apple Inc., located at One Apple Park Way in Cupertino, California, United States. It was opened to employees in April 2017, while construction was still underway, and has superseded the original headquarters at 1 Infinite Loop, which opened in 1993.</p>
+				<embed type="image/jpg" src="<?= asset('/media/company.jpg') ?>" width="90%" height="70%"> </embed>
+					<p>{{ __("Apple Park is the corporate headquarters of Apple Inc., located at One Apple Park Way in Cupertino, California, United States. It was opened to employees in April 2017, while construction was still underway, and has superseded the original headquarters at 1 Infinite Loop, which opened in 1993.")}}</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="footerPart">
 		<div class="adressFoot">
-			<h3>Apple company</h3>
-			<h5><address>Cupertino, California, United States</address></h5>
+			<h3>{{ __("Apple company")}}</h3>
+			<h5><address>{{ __("Cupertino, California, United States")}}</address></h5>
 		</div>
 		<div class="contactsFoot">
-			<img name="phone" src="media/phone.png" style="width: 6%; height: 15%;">
+			<img name="phone" src="<?= asset('/media/phone.png') ?>" style="width: 6%; height: 15%;">
 			<label for="phone">+1 942 156 854 </label>
 			<br><br>
-			<img name="mail" src="media/mail.png" style="width: 6%; height: 15%;">
+			<img name="mail" src="<?= asset('/media/mail.png') ?>" style="width: 6%; height: 15%;">
 			<label for="mail">apple@gmail.com</label>
 		</div>
 		<div class="socialsFoot">
-			<img id="facebookImg" src="media/facebook.png" style="width: 12%; height: 25%; cursor: pointer;" onmouseover="incOpacity1()" onmouseout="retOpacity1()" onclick="window.open('https://www.facebook.com/apple/')">
-			<img id="twitterImg" src="media/twitter.png" style="width: 10%; height: 22%; cursor: pointer;" onmouseover="incOpacity2()" onmouseout="retOpacity2()" onclick="window.open('https://twitter.com/apple?lang=en')">
-			<img id="instagramImg" src="media/instagram.png" style="width: 9%; height: 20%; cursor: pointer;" onmouseover="incOpacity3()" onmouseout="retOpacity3()" onclick="window.open('https://www.instagram.com/apple/?hl=en')">
+			<img id="facebookImg" src="<?= asset('/media/facebook.png') ?>" style="width: 12%; height: 25%; cursor: pointer;" onmouseover="incOpacity1()" onmouseout="retOpacity1()" onclick="window.open('https://www.facebook.com/apple/')">
+			<img id="twitterImg" src="<?= asset('/media/twitter.png') ?>" style="width: 10%; height: 22%; cursor: pointer;" onmouseover="incOpacity2()" onmouseout="retOpacity2()" onclick="window.open('https://twitter.com/apple?lang=en')">
+			<img id="instagramImg" src="<?= asset('/media/instagram.png') ?>" style="width: 9%; height: 20%; cursor: pointer;" onmouseover="incOpacity3()" onmouseout="retOpacity3()" onclick="window.open('https://www.instagram.com/apple/?hl=en')">
 		</div>
 	</div>
 
