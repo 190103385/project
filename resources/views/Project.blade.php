@@ -4,18 +4,18 @@
 	<meta charset="utf-8">
 	<title> Project </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="<?= asset('css/Project.css?v=').time() ?>">
-	<link rel="stylesheet" type="text/css" href="<?= asset('css/LessProject.css?v=').time() ?>">
-	<link rel="stylesheet" type="text/css" href="<?= asset('css/SassProject.css?v=').time() ?>">
+	<link rel="stylesheet" type="text/css" href="{{('css/Project.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{('css/LessProject.css?v=')}}">
+	<link rel="stylesheet" type="text/css" href="{{('css/SassProject.css?v=')}}.time() ?>">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 	<div>
 		<div class="headDiv" id="top">
-			<img src="<?= asset('/media/appleLogo.png') ?>" id="img1">
-			<img src="<?= asset('/media/appleLogo.png') ?>" id="img2">
-			<img src="<?= asset('/media/appleLogo.png') ?>" id="img3">
-			<img src="<?= asset('/media/appleLogo.png') ?>" id="img4">
+			<img src="{{('media/appleLogo.png')}}" id="img1">
+			<img src="{{('media/appleLogo.png')}}" id="img2">
+			<img src="{{('media/appleLogo.png')}}" id="img3">
+			<img src="{{('media/appleLogo.png')}}" id="img4">
 			<h1> APPLE </h1>
 		</div>
 		<div class="container">
@@ -138,7 +138,7 @@
 		<div class="myProducts">
 			<div id="firstProduct" class="products">
 	            <div class="product">
-	              <img src="<?= asset('/media/iphone.jpg') ?>" alt="Image" width="180px" height="180px" />
+	              <img src="{{('media/iphone.jpg')}}" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
@@ -175,7 +175,7 @@
 
 	        <div id="secondProduct" class="products">
 	            <div class="product">
-	              <img src="<?= asset('/media/appleWatch.jpg') ?>" alt="Image" width="180px" height="180px" />
+	              <img src="{{('media/appleWatch.jpg')}}" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
@@ -214,7 +214,7 @@
 		<div class="myProducts">
 			<div id="firstProduct" class="products">
 	            <div class="product">
-	              <img src="<?= asset('/media/ipad.jpg') ?>" alt="Image" width="180px" height="180px" />
+	              <img src="{{('media/ipad.jpg')}}" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
@@ -251,7 +251,7 @@
 
 	        <div id="secondProduct" class="products">
 	            <div class="product">
-	              <img src="<?= asset('/media/macbook.jpg') ?>" alt="Image" width="180px" height="180px" />
+	              <img src="<{{('media/macbook.jpg')}}" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
@@ -279,7 +279,7 @@
 	<div id="company">
 		<div class="company">
 			<div class="textCompany">
-				<img src="<?= asset('/media/companytext.jpg') ?>" alt="Image">
+				<img src="{{('media/companytext.jpg')}}" alt="Image">
 				<div class="text">
 					<h1>{{ __("Our company")}}</h1>
 					<p>{{ __("Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976 to develop and sell Wozniak's Apple I personal computer, though Wayne sold his share back within 12 days. It was incorporated as Apple Computer, Inc., in January 1977, and sales of its computers, including the Apple II, grew quickly. Within a few years, Jobs and Wozniak had hired a staff of computer designers and had a production line.")}}</p>
@@ -334,7 +334,7 @@
 			</div>
 
 			<div class="adress">
-				<embed type="image/jpg" src="<?= asset('/media/company.jpg') ?>" width="90%" height="70%"> </embed>
+				<embed type="image/jpg" src="{{('media/company.jpg')}}" width="90%" height="70%"> </embed>
 					<p>{{ __("Apple Park is the corporate headquarters of Apple Inc., located at One Apple Park Way in Cupertino, California, United States. It was opened to employees in April 2017, while construction was still underway, and has superseded the original headquarters at 1 Infinite Loop, which opened in 1993.")}}</p>
 			</div>
 		</div>
@@ -346,16 +346,16 @@
 			<h5><address>{{ __("Cupertino, California, United States")}}</address></h5>
 		</div>
 		<div class="contactsFoot">
-			<img name="phone" src="<?= asset('/media/phone.png') ?>" style="width: 6%; height: 15%;">
+			<img name="phone" src="{{('media/phone.png')}}" style="width: 6%; height: 15%;">
 			<label for="phone">+1 942 156 854 </label>
 			<br><br>
-			<img name="mail" src="<?= asset('/media/mail.png') ?>" style="width: 6%; height: 15%;">
+			<img name="mail" src="{{('media/mail.png')}}" style="width: 6%; height: 15%;">
 			<label for="mail">apple@gmail.com</label>
 		</div>
 		<div class="socialsFoot">
-			<img id="facebookImg" src="<?= asset('/media/facebook.png') ?>" style="width: 12%; height: 25%; cursor: pointer;" onmouseover="incOpacity1()" onmouseout="retOpacity1()" onclick="window.open('https://www.facebook.com/apple/')">
-			<img id="twitterImg" src="<?= asset('/media/twitter.png') ?>" style="width: 10%; height: 22%; cursor: pointer;" onmouseover="incOpacity2()" onmouseout="retOpacity2()" onclick="window.open('https://twitter.com/apple?lang=en')">
-			<img id="instagramImg" src="<?= asset('/media/instagram.png') ?>" style="width: 9%; height: 20%; cursor: pointer;" onmouseover="incOpacity3()" onmouseout="retOpacity3()" onclick="window.open('https://www.instagram.com/apple/?hl=en')">
+			<img id="facebookImg" src="{{('media/facebook.png')}}" style="width: 12%; height: 25%; cursor: pointer;" onmouseover="incOpacity1()" onmouseout="retOpacity1()" onclick="window.open('https://www.facebook.com/apple/')">
+			<img id="twitterImg" src="{{('media/twitter.png')}}" style="width: 10%; height: 22%; cursor: pointer;" onmouseover="incOpacity2()" onmouseout="retOpacity2()" onclick="window.open('https://twitter.com/apple?lang=en')">
+			<img id="instagramImg" src="{{('media/instagram.png')}}" style="width: 9%; height: 20%; cursor: pointer;" onmouseover="incOpacity3()" onmouseout="retOpacity3()" onclick="window.open('https://www.instagram.com/apple/?hl=en')">
 		</div>
 	</div>
 
