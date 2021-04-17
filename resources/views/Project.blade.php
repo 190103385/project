@@ -251,7 +251,7 @@
 
 	        <div id="secondProduct" class="products">
 	            <div class="product">
-	              <img src="<{{('media/macbook.jpg')}}" alt="Image" width="180px" height="180px" />
+	              <img src="{{('media/macbook.jpg')}}" alt="Image" width="180px" height="180px" />
 	            </div>
 
 	            <div class="aboutProduct">
