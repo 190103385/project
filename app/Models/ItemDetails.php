@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ItemDetails extends Model
 {
     use HasFactory;
-    protected $fillable = ['item_id', 'filename'];
+    protected $fillable = ['item_id', 'filename', 'email', 'comment'];
 
     public function item() {
     	return $this->belongsTo('App\Item');

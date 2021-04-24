@@ -27,6 +27,8 @@ Route::get('/{lang?}', function($lang='en')
 
 // Route::get('/project', 'App\Http\Controllers\UploadFileController@uploadForm');
 
-Route::post('/project', 'App\Http\Controllers\UploadFileController@uploadSubmit');
+// Route::post('/project', 'App\Http\Controllers\UploadFileController@uploadSubmit');
 
-Route::get('/mail/send', 'App\Http\Controllers\MailController@send');
+Route::post('/{lang?}', 'App\Http\Controllers\MailController@send');
+
+// Route::get('/mail/send', 'App\Http\Controllers\MailController@send');

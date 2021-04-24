@@ -4,12 +4,51 @@
 	<meta charset="utf-8">
 	<title> Project </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="{{('css/Project.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{('css/LessProject.css?v=')}}">
+	<link rel="stylesheet" type="text/css" href="{{('css/Project.css?v=')}}.time() ?>">
+	<link rel="stylesheet" type="text/css" href="{{('css/LessProject.css?v=')}}.time() ?>">
 	<link rel="stylesheet" type="text/css" href="{{('css/SassProject.css?v=')}}.time() ?>">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div id="app">
+		<div style="background-color: #343a40;">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<ul class="navbar-nav ml-auto">
+						@php $locale = session()->get('locale'); @endphp
+						<li class="nav-item dropdown">
+							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"role="button" data-toggle="dropdown" 
+							aria-haspopup="true" aria-expanded="false" v-pre>
+								@switch($locale)
+									@case('en')
+										English
+										@break
+									@case('ru')
+										Русский
+										@break
+									@endswitch
+									<span class="caret"></span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+								<a style="color:blue" class="dropdown-item" href="en">
+										English
+								</a><br>
+								<a style="color:blue" class="dropdown-item" href="ru">
+										Русский
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<main class="py-4">
+			@yield('content')
+		</main>
+	</div>
 	<div>
 		<div class="headDiv" id="top">
 			<img src="{{('media/appleLogo.png')}}" id="img1">
@@ -18,7 +57,7 @@
 			<img src="{{('media/appleLogo.png')}}" id="img4">
 			<h1> APPLE </h1>
 		</div>
-		<div class="container">
+		<div class="containerNav">
 			<nav id="menuBar">
 				<a href="#top"> {{ __("Home") }} </a>
 				<a href="#features"> {{ __("Features") }} </a>
@@ -56,7 +95,7 @@
 		</div>
 	</div> -->
 
-	<h1 style="display:flex; justify-content:center; font-family: 'Times New Roman, sans-serif'; padding-top: 130px;">Features</h1>
+	<h1 style="display:flex; justify-content:center; font-family: 'Times New Roman, sans-serif'; padding-top: 130px;">{{ __("Features") }}</h1>
 	<div id="features">
 		<div class="firstDescription">
 			<!-- <div id="heading1">
@@ -133,7 +172,7 @@
 		</div>
 	</div>
 
-	<h1 style="display:flex; justify-content:center; font-family: 'Times New Roman, sans-serif'; padding-top: 150px;">Products</h1>
+	<h1 style="display:flex; justify-content:center; font-family: 'Times New Roman, sans-serif'; padding-top: 150px;">{{ __("Products") }}</h1>
 	<div id="allProducts">
 		<div class="myProducts">
 			<div id="firstProduct" class="products">
@@ -283,7 +322,7 @@
 				<div class="text">
 					<h1>{{ __("Our company")}}</h1>
 					<p>{{ __("Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in April 1976 to develop and sell Wozniak's Apple I personal computer, though Wayne sold his share back within 12 days. It was incorporated as Apple Computer, Inc., in January 1977, and sales of its computers, including the Apple II, grew quickly. Within a few years, Jobs and Wozniak had hired a staff of computer designers and had a production line.")}}</p>
-					<a href="https://en.wikipedia.org/wiki/History_of_Apple_Inc." class="btn">{{ __("Read more")}}</a>
+					<a href="https://en.wikipedia.org/wiki/History_of_Apple_Inc." class="btn" style="border: 1px solid black; border-radius: 7px">{{ __("Read more")}}</a>
 				</div>
 			</div>
 			<div class="mapContainer">
@@ -294,43 +333,52 @@
 
 	<div id="contact">
 		<div class="contact">
-			<div class="inputs">
-				<div class="reg">
-					<form action="http://localhost/project/public/project" method="POST" enctype="multipart/form-data">
+			<div class="inputs" style="margin-top: -50px">
+				@if(count($errors) > 0)
+					<div class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert">x</button>
+						<ul>
+							@foreach($errors-> all() as $error)
+								<li> {{$error}} </li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
+
+				@if($message = Session::get('success'))
+					<div class="alert alert-success alert-block">
+						<button type="button" class="close" data-dismiss="alert">x</button>
+						<strong> {{ $message }}</strong>
+					</div>
+				@endif
+					<form action="{{ url('http://localhost/project/public/project') }}" method="POST" enctype="multipart/form-data">
 						{{csrf_field() }}
-					  <div class="container1">
-					    <hr>
-					
-					    <input type="text" placeholder="Your name" name="name" class="form-control">
-					
-					     <!-- <label for="surname"><b>Surname</b></label>
-					    <input type="text" placeholder="Enter Surname" name="surname" id="surname" required>
-					
-					    <label for="email"><b>Email</b></label>
-					    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-					
-					    <label for="msg"><b>Message</b></label><br>
-					    <textarea name="msg" cols="35" rows="10">  </textarea>
-					    <br>  -->
-					    
-					    <input type="file" name="photos[]" class="form-control" multiple>
-						<input type="submit" value="Upload">
+					    <div class="form-group">
+							<p>{{ __("Enter your name") }}: <p>
+					    	<input type="text" placeholder="Your name" name="name" class="form-control" autocomplete="off">
+						</div>
+
+						<div class="form-group">
+							<p>{{ __("Enter your surname") }}: <p>
+					    	<input type="text" placeholder="Your surname" name="surname" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<p>{{ __("Enter your email") }}:<p>
+					    	<input type="text" placeholder="Your Email" name="email" id="email">
+					    </div>
+
+					    <div class="form-group">
+					    	<p>{{ __("Enter your message") }}:<p>
+					    	<textarea name="comment" cols="35" rows="10" class="form-control">  </textarea>
+					    </div>
+
+					    <input type="file" name="photos[]" class="form-control" multiple><br>
+
+						<input type="submit" name="send" value="Send" class="btn btn-info">
 
 						<br>
-
-						<a href="http://localhost/project/public/mail/send"> {{ __("Send message")}}</a>
-					
-					    <!-- <button type="submit" class="registerbtn">Send</button> -->
-					  </div>
 					</form>
-					<!-- <?php
-    				    /*echo Form::open(array('url' => '/project', 'files' => 'true'));
-    				    echo Form::text('name');
-    				    echo Form::file('photos'); echo "<br>";
-    				    echo Form::submit('Upload');
-    				    echo Form::close();*/
-    				?> -->
-				</div>
 			</div>
 
 			<div class="adress">

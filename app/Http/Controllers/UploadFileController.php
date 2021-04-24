@@ -40,5 +40,6 @@ class UploadFileController extends Controller
     			$file -> move($destinationPath, $file -> getClientOriginalName());
     		}
 		}
+        return back()->with('succes', 'Thanks for contacting us!!!');
     }
 }

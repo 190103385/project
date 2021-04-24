@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class DemoEmail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $demo;
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($demo)
+    public function __construct($data)
     {
-        $this->demo=$demo;
+        $this->data=$data;
     }
 
     /**
@@ -29,12 +29,8 @@ class DemoEmail extends Mailable
     public function build()
     {
         return $this->from('190103385@stu.sdu.edu.kz')
-                    ->view('mails.demo')
-                    ->text('mails.demo_plain')
-                    ->with(
-                        [
-                            'testVarOne' => '1',
-                            'testVarTwo' => '2'
-                        ]);
+                    ->subject('Message from customer')
+                    ->view('dynamic_email_template')
+                    ->with('data', $this->data);
     }
 }
